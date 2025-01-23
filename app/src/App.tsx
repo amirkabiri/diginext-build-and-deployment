@@ -1,7 +1,5 @@
 import './App.css'
-import image from './hello.png'
 import { useEffect, useState } from 'react'
-console.log(image)
 
 function Image({ image }) {
   const [src, setState] = useState(image.preview)
@@ -24,7 +22,7 @@ function Image({ image }) {
 function App() {
   return (
     <div>
-      <Image image={image} />
+      {/*<Image image={image} />*/}
       <h1>Deployed successfully 2!</h1>
     </div>
   )
