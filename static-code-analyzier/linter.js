@@ -11,18 +11,8 @@ const ast = parse(fileContent)
 // Lint: find undefined vars
 const traverse = require('@babel/traverse').default
 
-const variables = new Set(['console'])
-
 traverse(ast, {
-  VariableDeclarator: ({ node }) => {
-    variables.add(node.id.name)
-  },
-  Identifier({ node, parent }) {
-    if (parent.type === 'MemberExpression') {
-      return
-    }
-    if (!variables.has(node.name)) {
-      console.log(`${node.name} variable not found!`)
-    }
-  },
+  /**
+   * Implement here
+   */
 })
