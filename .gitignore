@@ -1,3 +1,5 @@
 /answers
 .idea
 node_modules
+key
+key.pub
