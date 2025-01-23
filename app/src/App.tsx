@@ -25,7 +25,7 @@ function App() {
   return (
     <div>
       <Image image={image} />
-      <h1>Deployed successfully!</h1>
+      <h1>Deployed successfully 2!</h1>
     </div>
   )
 }
