@@ -17,11 +17,12 @@ jobs:
           username: ubuntu
           key: ${{ secrets.SSH_KEY }}
           script: |
+            sudo -i
             cd /home/ubuntu/diginext-build-and-deployment
             git restore .
             git clean -f .
             git pull
-
+            
             cd app
             npm i
             npm run build
