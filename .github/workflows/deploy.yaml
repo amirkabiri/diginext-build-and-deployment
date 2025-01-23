@@ -1,0 +1,27 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Connect to server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 37.152.179.132
+          username: ubuntu
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd /home/ubuntu/diginext-build-and-deployment
+            git restore .
+            git clean -f .
+            git pull
+
+            cd app
+            npm i
+            npm run build
